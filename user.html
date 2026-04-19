@@ -11,14 +11,12 @@
 
 <body>
   <div class="post__search">
-    <a href="/index.html">
-      <button>← Back</button>
-    </a>
+    <button type="button" onclick="window.location. href='/index.html'">← Back</button>
     <div class="post__search--container">
       <label class="post__search--label">
         Search by Id
       </label>
-      <input type="text" placeholder="1">
+      <input type="text" placeholder="1" onchange="onSeachChange(this.value)">
     </div>
   </div>
   <div class="post-list">
@@ -31,7 +29,7 @@
       </p>
     </div>
   </div>
+  <script src="user.js"></script>
 </body>
-<script src="user.js"></script>
 
 </html>
