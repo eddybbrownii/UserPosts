@@ -1,3 +1,5 @@
+const postListEl = document.querySelector ('.post-list');
+
 async function main () {
   const id = localStorage.getItem ('id');
   const posts = await fetch (
@@ -7,16 +9,21 @@ async function main () {
   const postListEl = document.querySelector ('.post-list');
   postListEl.innerHTML = postsData.map (post => postHTML (post)).join ('');
 
-  postsData.map (
-    post => `
+  postListEl.innerHTML = postsData
+    .map (
+      post => `
     <div class="post">
     <div class="post__title">
-    <h3>${post.title}</h3>
+    ${post.title}
     </div>
-    <div class="post__body">
-    <p>${post.body}</p>
-    </</div>`
-  );
+    <p class="post__body">
+    ${post.body}
+    </p>
+    </div>`
+    )
+    .join ('');
 }
+
+function postHTML (post) {}
 
 main ();
