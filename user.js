@@ -1,5 +1,9 @@
 const postListEl = document.querySelector ('.post-list');
 
+function onSearchChange () {
+  console.log (this.value);
+}
+
 async function main () {
   const id = localStorage.getItem ('id');
   const posts = await fetch (
