@@ -8,8 +8,9 @@ async function onSearchChange (event) {
 
 async function renderPosts (userId) {
   const posts = await fetch (
-    `https://jsonplaceholder.typicode.com/posts?userId=${id}`
+    `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
   );
+  const postsData = await posts.json ();
   postListEl.innerHTML = postsData.map (post => postHTML (post)).join ('');
 }
 
